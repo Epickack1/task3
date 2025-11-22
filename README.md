@@ -10,6 +10,7 @@ int is_word_char(char c)
 
     
 is_special_chaar(char c)
+
     Проверяет, на спецсимвол
         | - пайп (конвейер)
         & - фонное выполнение
@@ -20,6 +21,7 @@ is_special_chaar(char c)
 
         
 WordList* parse_line(const char *line)
+
     Создает новый список слов с помощью wordlist_create()
     Последовательно обрабатывает каждый символ строки:
         Пропускает пробельные символы
@@ -29,6 +31,7 @@ WordList* parse_line(const char *line)
 
         
 char* read_input_line(void)
+
 Чтение строки ввода от пользователя с динамическим увеличением буфера.
     Выделяет начальный буфер размером BUFFER_SIZE (256 символов)
     Постепенно читает символы из stdin до конца строки или EOF
@@ -37,6 +40,7 @@ char* read_input_line(void)
 
     
 int main(void)
+
 Основная функция программы, реализующая главный цикл обработки.
     Чтение строки с помощью read_input_line()
     Проверка на пустую строку или конец ввода
@@ -49,23 +53,29 @@ int main(void)
 
 ### wordlist.h / wordlist.c
 wordlist_create(void)
+
     Создает новый динамический список слов
     Инициализирует с начальной емкостью 16 элементов
 
 wordlist_add(WordList *list, const char *word)
+
     Добавляет слово в список
     Автоматически расширяет массив при необходимости
 
 wordlist_sort(WordList *list)
+
     Сортирует список в лексикографическом порядке
     Использует алгоритм пузырьковой сортировки
 
 wordlist_print_with_count(const WordList *list)
+
     Выводит количество элементов и сам список
 
 find_most_common_special(const WordList *list)
+
     Находит самый частый специальный символ
     Поддерживает 11 типов спецсимволов
 
 wordlist_destroy(WordList *list)
+
     Корректно освобождает всю память списка
